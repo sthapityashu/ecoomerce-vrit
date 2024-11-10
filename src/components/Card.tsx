@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { RootHeader } from "@/assets/views/layouts/root";
+// import { RootHeader } from "@/assets/views/layouts/root";
 import { useCart } from "@/context/useCart";
 
 type CardSchema = {
@@ -13,7 +13,7 @@ type CardSchema = {
 
 const Card = (props: CardSchema) => {
   const { image, title, descp, price } = props;
-  const [mainImage, setMainImage] = useState(image);
+  // const [mainImage, setMainImage] = useState(image);
   const [modalImage, setModalImage] = useState<string | null>(null);
   const { addToCart } = useCart();
 
@@ -40,7 +40,7 @@ const Card = (props: CardSchema) => {
         {/* Main Image with magnify effect */}
         <div className="relative overflow-hidden w-full h-[500px] md:w-[1000px]">
           <Image
-            src={mainImage}
+            src={image}
             alt="Main product image"
             width={500}
             height={500}
